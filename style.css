@@ -207,7 +207,7 @@ body::after {
 :root {
   --nav-x: 5%;   /* Adjust left/right position of nav button */
   --nav-y: 5%;   /* Adjust top/bottom position of nav button */
-  --nav-size: 50px; /* Adjust size of nav button */
+  --nav-size: 200px; /* Adjust size of nav button */
 }
 
 /* === Navigation Button === */
