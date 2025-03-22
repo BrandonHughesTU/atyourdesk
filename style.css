@@ -237,7 +237,7 @@ body::after {
 
 :root {
   --circle-center-x: 25%;  /* Move circle horizontally */
-  --circle-center-y: 0%;  /* Move circle vertically */
+  --circle-center-y: 40%;  /* Move circle vertically */
   --circle-radius: 150px;  /* Radius of the circle */
 }
 
