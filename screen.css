@@ -1,0 +1,241 @@
+:root {
+  --mac-x: 50%;        /* Horizontal position */
+  --mac-y: 60%;        /* Vertical position */
+  --mac-width: 150vw;  /* Size */
+  --mac-height: 150vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  z-index: 1;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('Desk.jpg') no-repeat center center/cover;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: var(--mac-y);
+  left: var(--mac-x);
+  transform: translate(-50%, -50%);
+  background: url('Macputer.png') no-repeat center center;
+  background-size: contain;
+  width: var(--mac-width);
+  height: var(--mac-height);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 1;
+}
+
+.mac-content {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+:root {
+  --back-x: -950px; /* Horizontal position */
+  --back-y: 410px; /* Vertical position */
+}
+
+.back-button {
+  position: absolute;
+  top: var(--back-y);
+  left: var(--back-x);
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background: transparent;
+  color: #00ff88;
+  font-family: 'SevenSegment', monospace;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border: none;
+  z-index: 11;
+}
+
+.back-button:hover {
+  color: #00ffaa;
+  transform: scale(1.2);
+}
+
+.popup-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-family: 'SevenSegment', monospace;
+  background-color: #00ff88;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 3;
+  position: relative;
+}
+
+.popup-button:hover {
+  background-color: #00ffaa;
+  transform: scale(1.05);
+}
+
+:root {
+  --popup-x: 50%;  /* Adjust left/right position */
+  --popup-y: 42.5%;  /* Adjust top/bottom position */
+}
+
+.popup-container {
+  position: absolute;
+  left: var(--popup-x);
+  top: var(--popup-y);
+  transform: translate(-50%, -50%);
+  width: 1766px;
+  height: 990px;
+  border: 2px dashed #00ff88;
+  z-index: 10; /* increased from 1 */
+  pointer-events: auto;
+}
+
+.popup {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 10;
+  width: 300px;
+  color: #000000;
+}
+
+.popup.show {
+  display: block;
+}
+
+.popup-header {
+  cursor: move;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #00ff88;
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  padding: 5px 15px;
+  font-family: 'SevenSegment', monospace;
+  background: #00ff88;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.popup-icon {
+  position: absolute;
+  top: 25px;
+  right: 1675px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 11; /* above container but not interfering */
+}
+
+.popup-icon:hover {
+  transform: scale(1.1);
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 8px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #00ff88;
+  background-color: #000;
+  color: #00ff88;
+}
+
+.task-input button {
+  padding: 8px 14px;
+  background: #00ff88;
+  color: black;
+  font-family: 'SevenSegment', monospace;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-input button:hover {
+  background-color: #00ffaa;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.task-list li {
+  background: rgba(0, 255, 136, 0.1);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00ff88;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-list button {
+  background: transparent;
+  border: none;
+  color: #00ffaa;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.task-list button:hover {
+  color: red;
+}
