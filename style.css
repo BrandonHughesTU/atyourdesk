@@ -204,7 +204,34 @@ body::after {
 }
 
 
+:root {
+  --nav-x: 5%;   /* Adjust left/right position of nav button */
+  --nav-y: 5%;   /* Adjust top/bottom position of nav button */
+  --nav-size: 50px; /* Adjust size of nav button */
+}
 
+/* === Navigation Button === */
+.nav-button {
+  position: absolute;
+  top: var(--nav-y);
+  left: var(--nav-x);
+  width: var(--nav-size);
+  height: var(--nav-size);
+  font-size: 1.2rem;
+  font-family: 'SevenSegment', monospace;
+  background-color: transparent;
+  color: #00ff88;
+  text-shadow: 0 0 8px rgba(0, 255, 100, 0.8);
+  cursor: pointer;
+  z-index: 5;
+  border: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: scale(1.2);
+  color: #00ffaa;
+}
 
 
 
